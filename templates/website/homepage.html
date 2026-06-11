@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}MB Litom | AI-Accelerated Software Development Studio{% endblock %}
+{% block meta_description %}MB Litom is a professional AI-accelerated software development studio for SaaS MVPs, web applications, internal tools, Odoo systems, integrations, automation, and project rescue.{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-copy">
+        <p class="eyebrow">AI-accelerated software development studio</p>
+        <h1>Build practical software without turning your business into a software company.</h1>
+        <p class="lead">MB Litom helps teams design, build, repair, and ship serious web applications, SaaS MVPs, internal tools, mobile MVPs, Odoo systems, API integrations, and automation workflows.</p>
+        <div class="hero-actions">
+            <a class="button primary" href="#contact">Tell us what you want to build</a>
+            <a class="button secondary" href="#services">View services</a>
+        </div>
+    </div>
+    <aside class="hero-panel" aria-label="Delivery focus">
+        <p class="panel-label">Current focus</p>
+        <ul>
+            <li>Clear scope before code</li>
+            <li>Lean Django monoliths first</li>
+            <li>AI where it improves speed and review, not where judgment is needed</li>
+            <li>Proposal, milestones, delivery, and maintenance</li>
+        </ul>
+    </aside>
+</section>
+
+<section id="services" class="section">
+    <div class="section-heading">
+        <p class="eyebrow">Services</p>
+        <h2>Software work for companies that need usable outcomes.</h2>
+    </div>
+    <div class="grid cards">
+        <article>
+            <h3>SaaS MVPs and web apps</h3>
+            <p>From first working product to production-ready foundation, with clean architecture and practical delivery priorities.</p>
+        </article>
+        <article>
+            <h3>Internal tools and automations</h3>
+            <p>Dashboards, workflows, approvals, reporting, document handling, and integrations that reduce manual operations.</p>
+        </article>
+        <article>
+            <h3>Odoo systems and API integrations</h3>
+            <p>Custom Odoo work, business process fit, third-party APIs, data flows, and operational systems that have to keep working.</p>
+        </article>
+        <article>
+            <h3>Project rescue</h3>
+            <p>Technical audits, stabilization, refactoring plans, and delivery recovery for codebases that stalled or became risky to change.</p>
+        </article>
+    </div>
+</section>
+
+<section id="process" class="section process">
+    <div class="section-heading">
+        <p class="eyebrow">Process</p>
+        <h2>A direct path from request to delivery.</h2>
+    </div>
+    <ol class="steps">
+        <li><strong>Request</strong><span>You describe the business problem, current constraints, and desired result.</span></li>
+        <li><strong>Proposal</strong><span>We define scope, assumptions, risks, timeline, and milestone structure before payment.</span></li>
+        <li><strong>Build</strong><span>Implementation proceeds in focused milestones with reviewable progress and clear decisions.</span></li>
+        <li><strong>Deliver</strong><span>You receive working software, documentation where needed, and a practical path for maintenance.</span></li>
+    </ol>
+</section>
+
+<section id="proof" class="section proof">
+    <div>
+        <p class="eyebrow">Proof of execution</p>
+        <h2>ChangeHarbor showed the operating model.</h2>
+    </div>
+    <p>Before MB Litom, the same delivery approach was proven through ChangeHarbor: practical SaaS architecture, invoice and billing flows, monitoring, background jobs, Dockerized development, and production-minded iteration. MB Litom applies that execution discipline to client projects.</p>
+</section>
+
+<section id="contact" class="section cta">
+    <p class="eyebrow">Start with scope</p>
+    <h2>Tell us what you want to build.</h2>
+    <p>Share the outcome you need, the systems involved, and what is blocking progress. The next step is a proposal, not a generic cart checkout.</p>
+    <a class="button primary" href="mailto:hello@litom.dev?subject=Project%20request%20for%20MB%20Litom">Send a project request</a>
+</section>
+{% endblock %}

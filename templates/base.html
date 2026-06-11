@@ -1,0 +1,33 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}MB Litom{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}MB Litom builds practical AI-accelerated software for serious businesses.{% endblock %}">
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="{% url 'website:homepage' %}" aria-label="MB Litom homepage">
+            <span class="brand-mark">L</span>
+            <span>MB Litom</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#proof">Proof</a>
+            <a class="nav-cta" href="#contact">Start a project</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <p>MB Litom builds SaaS MVPs, web applications, internal tools, Odoo systems, integrations, and recovery plans for stalled software projects.</p>
+    </footer>
+</body>
+</html>
