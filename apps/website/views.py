@@ -19,8 +19,16 @@ def process(request):
     return render(request, "website/process.html")
 
 
+def case_studies(request):
+    return render(request, "website/case_studies/index.html")
+
+
 def changeharbor_case_study(request):
     return render(request, "website/case_studies/changeharbor.html")
+
+
+def odoo_apps_case_study(request):
+    return render(request, "website/case_studies/odoo_apps.html")
 
 
 def contact(request):

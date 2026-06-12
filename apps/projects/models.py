@@ -3,10 +3,10 @@ from django.db import models
 
 class ProjectRequest(models.Model):
     class ProjectType(models.TextChoices):
-        SAAS_MVP = "saas_mvp", "SaaS MVP"
+        SAAS_PRODUCT = "saas_product", "SaaS or web application build"
         WEB_APP = "web_app", "Web application"
         CLIENT_PORTAL = "client_portal", "Client portal"
-        MOBILE_MVP = "mobile_mvp", "Mobile MVP"
+        MOBILE_APP = "mobile_app", "Mobile application with backend"
         ODOO = "odoo", "Odoo system"
         AUTOMATION = "automation", "Automation workflow"
         API_INTEGRATION = "api_integration", "API integration"

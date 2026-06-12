@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('full_name', models.CharField(max_length=160)),
                 ('email', models.EmailField(max_length=254)),
                 ('company', models.CharField(blank=True, max_length=160)),
-                ('project_type', models.CharField(choices=[('saas_mvp', 'SaaS MVP'), ('web_app', 'Web application'), ('client_portal', 'Client portal'), ('mobile_mvp', 'Mobile MVP'), ('odoo', 'Odoo system'), ('automation', 'Automation workflow'), ('api_integration', 'API integration'), ('project_rescue', 'Project rescue'), ('other', 'Other')], max_length=32)),
+                ('project_type', models.CharField(choices=[('saas_product', 'SaaS or web application build'), ('web_app', 'Web application'), ('client_portal', 'Client portal'), ('mobile_app', 'Mobile application with backend'), ('odoo', 'Odoo system'), ('automation', 'Automation workflow'), ('api_integration', 'API integration'), ('project_rescue', 'Project rescue'), ('other', 'Other')], max_length=32)),
                 ('budget_range', models.CharField(choices=[('under_3000', 'Under 3,000 EUR'), ('3000_8000', '3,000-8,000 EUR'), ('8000_15000', '8,000-15,000 EUR'), ('15000_25000', '15,000-25,000 EUR'), ('over_25000', 'Over 25,000 EUR'), ('not_sure', 'Not sure')], max_length=32)),
                 ('timeline', models.CharField(choices=[('asap', 'ASAP'), ('1_3_weeks', '1-3 weeks'), ('1_2_months', '1-2 months'), ('3_plus_months', '3+ months'), ('not_sure', 'Not sure')], max_length=32)),
                 ('message', models.TextField()),

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}ChangeHarbor Case Study | MB Litom{% endblock %}
 {% block meta_description %}A ChangeHarbor case study showing MB Litom's delivery approach for SaaS architecture, billing flows, monitoring, and project execution.{% endblock %}
@@ -7,7 +8,25 @@
 <section class="page-hero">
     <p class="eyebrow">Case study</p>
     <h1>ChangeHarbor proved the delivery discipline behind MB Litom.</h1>
-    <p class="lead">ChangeHarbor was built as a practical SaaS system with production-minded architecture, invoice and billing workflows, monitoring, background jobs, and Dockerized development.</p>
+    <p class="lead">ChangeHarbor is a live SaaS product built with user accounts, dashboards, background jobs, monitoring logic, change history, alerts, and deployment-ready infrastructure.</p>
+    <div class="hero-actions">
+        <a class="button primary" href="https://changeharbor.online/" target="_blank" rel="noopener noreferrer">View live product</a>
+    </div>
+</section>
+
+<section class="section case-preview case-preview-wide">
+    <div class="case-preview-copy">
+        <p class="eyebrow">Product preview</p>
+        <h2>A working product used as proof of execution.</h2>
+        <p>ChangeHarbor demonstrates the kind of implementation work MB Litom can deliver: account flows, dashboard views, monitored background processing, alerting behavior, historical records, and infrastructure that can move beyond local development.</p>
+        <p>It is presented here as execution evidence, not as a claim about market adoption, revenue, or scale.</p>
+    </div>
+    <a class="product-preview" href="https://changeharbor.online/" target="_blank" rel="noopener noreferrer" aria-label="Open ChangeHarbor live product">
+        <img src="{% static 'img/case-studies/changeharbor-preview.png' %}" alt="ChangeHarbor public website preview" onerror="this.closest('.product-preview').classList.add('is-missing'); this.remove();">
+        <div class="product-preview-fallback">
+            <span>Open ChangeHarbor</span>
+        </div>
+    </a>
 </section>
 
 <section class="section proof">
@@ -15,7 +34,7 @@
         <p class="eyebrow">What mattered</p>
         <h2>Architecture first, then usable business workflows.</h2>
     </div>
-    <p>The project required more than screens. It needed clear models, reliable background processing, admin visibility, billing-adjacent flows, operational monitoring, and a maintainable Django foundation that could support continued iteration.</p>
+    <p>The project required more than screens. It needed clear models, reliable background processing, admin visibility, change history, alerts, operational monitoring, and a maintainable Django foundation that could support continued iteration.</p>
 </section>
 
 <section class="section">

@@ -1,17 +1,18 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}MB Litom | AI-Accelerated Software Development Studio{% endblock %}
-{% block meta_description %}MB Litom is a professional AI-accelerated software development studio for SaaS MVPs, web applications, internal tools, Odoo systems, integrations, automation, and project rescue.{% endblock %}
+{% block meta_description %}MB Litom is a professional AI-accelerated software development studio for web applications, client portals, internal tools, Odoo systems, integrations, automation, and project rescue.{% endblock %}
 
 {% block content %}
 <section class="hero">
     <div class="hero-copy">
         <p class="eyebrow">AI-accelerated software development studio</p>
-        <h1>Build practical software without turning your business into a software company.</h1>
-        <p class="lead">MB Litom helps teams design, build, repair, and ship serious web applications, SaaS MVPs, internal tools, mobile MVPs, Odoo systems, API integrations, and automation workflows.</p>
+        <h1>Business software built with clean execution.</h1>
+        <p class="lead">MB Litom builds web applications, client portals, internal tools, Odoo systems, automations, integrations, and recovery plans for software projects that need to move forward.</p>
         <div class="hero-actions">
-            <a class="button primary" href="{% url 'website:contact' %}">Tell us what you want to build</a>
-            <a class="button secondary" href="{% url 'website:services' %}">View services</a>
+            <a class="button primary" href="{% url 'website:contact' %}">Start a project</a>
+            <a class="button secondary" href="{% url 'website:case_studies' %}">View work</a>
         </div>
     </div>
     <aside class="hero-panel" aria-label="Delivery focus">
@@ -32,8 +33,8 @@
     </div>
     <div class="grid cards">
         <article>
-            <h3>SaaS MVPs and web apps</h3>
-            <p>From first working product to production-ready foundation, with clean architecture and practical delivery priorities.</p>
+            <h3>SaaS and web applications</h3>
+            <p>From first working software to a production-minded foundation, with clean architecture and practical delivery priorities.</p>
         </article>
         <article>
             <h3>Internal tools and automations</h3>
@@ -63,12 +64,56 @@
     </ol>
 </section>
 
-<section id="proof" class="section proof">
-    <div>
+<section id="proof" class="section work-preview-section">
+    <div class="section-heading">
         <p class="eyebrow">Proof of execution</p>
-        <h2>ChangeHarbor showed the operating model.</h2>
+        <h2>Selected work that shows how MB Litom builds and ships.</h2>
+        <p>Proof is presented as concrete products and published modules: ChangeHarbor as a SaaS execution example, and Odoo Apps as evidence of packaged ERP extensions.</p>
     </div>
-    <p>Before MB Litom, the same delivery approach was proven through ChangeHarbor: practical SaaS architecture, invoice and billing flows, monitoring, background jobs, Dockerized development, and production-minded iteration. MB Litom applies that execution discipline to client projects.</p>
+    <div class="work-preview-grid">
+        <article class="work-preview-card">
+            <a class="product-preview compact-preview" href="https://changeharbor.online/" target="_blank" rel="noopener noreferrer" aria-label="Open ChangeHarbor live product">
+                <img src="{% static 'img/case-studies/changeharbor-preview.png' %}" alt="ChangeHarbor public website preview" onerror="this.closest('.product-preview').classList.add('is-missing'); this.remove();">
+                <div class="product-preview-fallback">
+                    <span>Open ChangeHarbor</span>
+                </div>
+            </a>
+            <p class="panel-label">SaaS product</p>
+            <h3>ChangeHarbor</h3>
+            <p>A live SaaS product built with user accounts, dashboards, background jobs, monitoring logic, change history, alerts, and deployment-ready infrastructure.</p>
+            <a class="text-link" href="{% url 'website:changeharbor_case_study' %}">View case study</a>
+        </article>
+        <article class="work-preview-card">
+            <p class="panel-label">Odoo modules</p>
+            <h3>Odoo Apps by MB Litom</h3>
+            <p>Published Odoo modules showing MB Litom’s ability to build business software extensions, package modules, and work with real ERP workflows.</p>
+            <a class="text-link" href="{% url 'website:odoo_apps_case_study' %}">View Odoo work</a>
+        </article>
+    </div>
+    <a class="button secondary" href="{% url 'website:case_studies' %}">View selected work</a>
+</section>
+
+<section class="section odoo-proof">
+    <div class="section-heading">
+        <p class="eyebrow">Odoo apps</p>
+        <h2>Published Odoo modules, packaged for real business workflows.</h2>
+        <p>Selected Odoo work shows that MB Litom can build, package, publish, and maintain focused modules for accounting and operational systems.</p>
+    </div>
+    <div class="odoo-work-grid">
+        <article class="selected-work-card featured-work">
+            <p class="panel-label">Selected work</p>
+            <h3>KSeF Readiness Validator for Polish Invoices</h3>
+            <p>A focused Odoo module for checking Polish invoice readiness against KSeF-related requirements before teams move deeper into compliance and rollout planning.</p>
+            <a class="text-link" href="https://apps.odoo.com/apps/modules/18.0/account_ksef_preflight" target="_blank" rel="noopener noreferrer">View KSeF app</a>
+        </article>
+        <article class="selected-work-card compact-work">
+            <p class="panel-label">Additional published app</p>
+            <h3>Lithuanian Invoice &amp; Vendor Bill Tools</h3>
+            <p>Odoo tooling for practical invoice and vendor bill workflows in a Lithuanian business context.</p>
+            <a class="text-link" href="https://apps.odoo.com/apps/modules/18.0/litom_lithuanian_invoice_tools" target="_blank" rel="noopener noreferrer">View Lithuanian app</a>
+        </article>
+    </div>
+    <a class="text-link" href="{% url 'website:odoo_apps_case_study' %}">View Odoo work</a>
 </section>
 
 <section id="contact" class="section cta">

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Selected Work | MB Litom{% endblock %}
+{% block meta_description %}Selected MB Litom proof of execution across SaaS products and published Odoo modules.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <p class="eyebrow">Selected work</p>
+    <h1>Proof of execution across SaaS products and Odoo modules.</h1>
+    <p class="lead">MB Litom presents selected work as factual evidence of built, packaged, published, and maintained software. No adoption, revenue, or scale claims are implied.</p>
+</section>
+
+<section class="section">
+    <div class="grid work-card-grid">
+        <article class="work-card">
+            <p class="panel-label">SaaS product</p>
+            <h2>ChangeHarbor</h2>
+            <p>A live SaaS product built with user accounts, dashboards, background jobs, monitoring logic, change history, alerts, and deployment-ready infrastructure.</p>
+            <a class="text-link" href="{% url 'website:changeharbor_case_study' %}">View case study</a>
+        </article>
+        <article class="work-card">
+            <p class="panel-label">Odoo modules</p>
+            <h2>Odoo Apps by MB Litom</h2>
+            <p>Published Odoo modules showing MB Litom’s ability to build business software extensions, package modules, and work with real ERP workflows.</p>
+            <a class="text-link" href="{% url 'website:odoo_apps_case_study' %}">View Odoo work</a>
+        </article>
+        <article class="work-card">
+            <p class="panel-label">Odoo / Polish invoicing</p>
+            <h2>KSeF Readiness Validator for Polish Invoices</h2>
+            <p>A focused Odoo module direction for local invoice readiness checks and Polish KSeF preparation workflows.</p>
+            <a class="text-link" href="https://apps.odoo.com/apps/modules/18.0/account_ksef_preflight" target="_blank" rel="noopener noreferrer">View Odoo apps</a>
+        </article>
+        <article class="work-card">
+            <p class="panel-label">Odoo / Lithuanian accounting</p>
+            <h2>Lithuanian Invoice &amp; Vendor Bill Tools</h2>
+            <p>A practical Odoo module for invoice and vendor bill workflow improvements.</p>
+            <a class="text-link" href="https://apps.odoo.com/apps/modules/18.0/litom_lithuanian_invoice_tools" target="_blank" rel="noopener noreferrer">View Odoo apps</a>
+        </article>
+    </div>
+</section>
+{% endblock %}
