@@ -6,15 +6,37 @@
 {% block content %}
 <section class="page-hero">
     <p class="eyebrow">Contact</p>
-    <h1>Start with the problem, systems, and desired result.</h1>
-    <p class="lead">Send enough context to decide whether a proposal makes sense. The next step is a scoped conversation, not a generic checkout or client portal signup.</p>
-    <div class="hero-actions">
-        <a class="button primary" href="mailto:hello@litom.dev?subject=Project%20request%20for%20MB%20Litom">Email a project request</a>
-    </div>
+    <h1>Tell us what you want to build.</h1>
+    <p class="lead">Share the business problem, current systems, timeline, and budget range. MB Litom reviews each request before any proposal, deposit, or payment request. Exact pricing and delivery commitments come after discovery.</p>
 </section>
 
-<section class="section">
-    <div class="grid cards cards-three">
+<section class="section contact-layout">
+    <form class="project-request-form" method="post" novalidate>
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+            <div class="form-errors" role="alert">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        {% for field in form %}
+            <div class="form-field">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}
+                    <p class="field-help">{{ field.help_text }}</p>
+                {% endif %}
+                {% if field.errors %}
+                    <div class="field-errors" role="alert">{{ field.errors }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <button class="button primary" type="submit">Send project request</button>
+    </form>
+
+    <aside class="grid cards contact-notes">
         <article>
             <h2>Useful context</h2>
             <p>Describe what you need built or repaired, who will use it, what systems are involved, and what is currently blocking progress.</p>
@@ -27,6 +49,6 @@
             <h2>Good-fit work</h2>
             <p>SaaS MVPs, web applications, internal tools, mobile MVPs, Odoo systems, API integrations, automation workflows, and project rescue.</p>
         </article>
-    </div>
+    </aside>
 </section>
 {% endblock %}

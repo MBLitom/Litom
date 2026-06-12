@@ -226,7 +226,9 @@ h3 {
 
 .cards p,
 .proof p,
-.cta p {
+.cta p,
+.field-help,
+.confirmation p {
     color: var(--muted);
 }
 
@@ -290,6 +292,73 @@ h3 {
     font-size: 0.95rem;
 }
 
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.project-request-form {
+    display: grid;
+    gap: 18px;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    box-shadow: 0 24px 70px rgba(23, 33, 30, 0.08);
+}
+
+.form-field {
+    display: grid;
+    gap: 8px;
+}
+
+.form-field label {
+    font-weight: 750;
+}
+
+.form-control {
+    width: 100%;
+    min-height: 46px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px 12px;
+    color: var(--ink);
+    background: #fff;
+    font: inherit;
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.form-control:focus {
+    border-color: var(--accent);
+    outline: 3px solid rgba(23, 100, 90, 0.16);
+}
+
+.field-help {
+    margin: 0;
+    font-size: 0.92rem;
+}
+
+.field-errors,
+.form-errors {
+    color: #8a1f11;
+    font-size: 0.92rem;
+}
+
+.field-errors ul,
+.form-errors ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.contact-notes {
+    grid-template-columns: 1fr;
+}
+
 @media (max-width: 900px) {
     .site-header {
         align-items: flex-start;
@@ -301,6 +370,7 @@ h3 {
     }
 
     .hero,
+    .contact-layout,
     .proof {
         grid-template-columns: 1fr;
     }

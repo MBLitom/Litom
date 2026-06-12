@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+
+from apps.projects.forms import ProjectRequestForm
 
 
 def homepage(request):
@@ -22,4 +24,16 @@ def changeharbor_case_study(request):
 
 
 def contact(request):
-    return render(request, "website/contact.html")
+    if request.method == "POST":
+        form = ProjectRequestForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("website:contact_success")
+    else:
+        form = ProjectRequestForm()
+
+    return render(request, "website/contact.html", {"form": form})
+
+
+def contact_success(request):
+    return render(request, "website/contact_success.html")
