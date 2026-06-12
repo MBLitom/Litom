@@ -15,10 +15,11 @@
             <span>MB Litom</span>
         </a>
         <nav class="site-nav" aria-label="Main navigation">
-            <a href="#services">Services</a>
-            <a href="#process">Process</a>
-            <a href="#proof">Proof</a>
-            <a class="nav-cta" href="#contact">Start a project</a>
+            <a href="{% url 'website:services' %}">Services</a>
+            <a href="{% url 'website:pricing' %}">Pricing</a>
+            <a href="{% url 'website:process' %}">Process</a>
+            <a href="{% url 'website:changeharbor_case_study' %}">Case study</a>
+            <a class="nav-cta" href="{% url 'website:contact' %}">Start a project</a>
         </nav>
     </header>
 

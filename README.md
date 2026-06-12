@@ -1,6 +1,6 @@
-# MB Litom
+# Litom
 
-MB Litom is a professional AI-accelerated software development studio website and future client platform.
+Litom is the Django project for MB Litom, a professional AI-accelerated software development studio website and future client platform.
 
 The product direction is a serious B2B system for project requests, proposals, approvals, deposit and milestone payment requests, project tracking, and delivery. This repository starts as a Django monolith so the public website and client portal can grow from one maintainable codebase.
 

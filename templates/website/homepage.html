@@ -10,8 +10,8 @@
         <h1>Build practical software without turning your business into a software company.</h1>
         <p class="lead">MB Litom helps teams design, build, repair, and ship serious web applications, SaaS MVPs, internal tools, mobile MVPs, Odoo systems, API integrations, and automation workflows.</p>
         <div class="hero-actions">
-            <a class="button primary" href="#contact">Tell us what you want to build</a>
-            <a class="button secondary" href="#services">View services</a>
+            <a class="button primary" href="{% url 'website:contact' %}">Tell us what you want to build</a>
+            <a class="button secondary" href="{% url 'website:services' %}">View services</a>
         </div>
     </div>
     <aside class="hero-panel" aria-label="Delivery focus">
@@ -75,6 +75,6 @@
     <p class="eyebrow">Start with scope</p>
     <h2>Tell us what you want to build.</h2>
     <p>Share the outcome you need, the systems involved, and what is blocking progress. The next step is a proposal, not a generic cart checkout.</p>
-    <a class="button primary" href="mailto:hello@litom.dev?subject=Project%20request%20for%20MB%20Litom">Send a project request</a>
+    <a class="button primary" href="{% url 'website:contact' %}">Start a project request</a>
 </section>
 {% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}ChangeHarbor Case Study | MB Litom{% endblock %}
+{% block meta_description %}A ChangeHarbor case study showing MB Litom's delivery approach for SaaS architecture, billing flows, monitoring, and project execution.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <p class="eyebrow">Case study</p>
+    <h1>ChangeHarbor proved the delivery discipline behind MB Litom.</h1>
+    <p class="lead">ChangeHarbor was built as a practical SaaS system with production-minded architecture, invoice and billing workflows, monitoring, background jobs, and Dockerized development.</p>
+</section>
+
+<section class="section proof">
+    <div>
+        <p class="eyebrow">What mattered</p>
+        <h2>Architecture first, then usable business workflows.</h2>
+    </div>
+    <p>The project required more than screens. It needed clear models, reliable background processing, admin visibility, billing-adjacent flows, operational monitoring, and a maintainable Django foundation that could support continued iteration.</p>
+</section>
+
+<section class="section">
+    <div class="grid cards cards-three">
+        <article>
+            <h2>SaaS foundation</h2>
+            <p>Django application structure, PostgreSQL, Redis, Docker, admin workflows, background jobs, and production-oriented settings.</p>
+        </article>
+        <article>
+            <h2>Billing operations</h2>
+            <p>Invoice-oriented workflows, payment request thinking, plan seeding, and careful separation between commercial logic and future payment provider work.</p>
+        </article>
+        <article>
+            <h2>Monitoring and recovery</h2>
+            <p>Health checks, logs, worker visibility, screenshot monitoring, and practical debugging paths for delivery confidence.</p>
+        </article>
+    </div>
+</section>
+{% endblock %}
