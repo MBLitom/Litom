@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}MB Litom{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}MB Litom builds practical AI-accelerated software for serious businesses.{% endblock %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/brand/litom-icon-32.png' %}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/brand/litom-icon-180.png' %}">
-    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/brand/litom-icon-live-32.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/brand/litom-icon-live-180.png' %}">
+    <link rel="stylesheet" href="{% static 'css/site.css' %}?v=20260612a">
 </head>
 <body>
     <header class="site-header">
         <a class="brand" href="{% url 'website:homepage' %}" aria-label="MB Litom homepage">
-            <img class="brand-logo" src="{% static 'img/brand/litom-logo-horizontal-400.png' %}" srcset="{% static 'img/brand/litom-logo-horizontal-400.png' %} 400w, {% static 'img/brand/litom-logo-horizontal-800.png' %} 800w" sizes="180px" alt="MB Litom">
+            <img class="brand-logo" src="{% static 'img/brand/litom-logo-live-400.png' %}" srcset="{% static 'img/brand/litom-logo-live-400.png' %} 400w, {% static 'img/brand/litom-logo-live-800.png' %} 800w" sizes="180px" alt="MB Litom">
         </a>
         <nav class="site-nav" aria-label="Main navigation">
             <a href="{% url 'website:services' %}">Services</a>
