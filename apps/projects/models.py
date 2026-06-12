@@ -3,13 +3,13 @@ from django.db import models
 
 class ProjectRequest(models.Model):
     class ProjectType(models.TextChoices):
-        SAAS_PRODUCT = "saas_product", "SaaS or web application build"
-        WEB_APP = "web_app", "Web application"
+        WEB_APPLICATION = "web_application", "Web application"
         CLIENT_PORTAL = "client_portal", "Client portal"
-        MOBILE_APP = "mobile_app", "Mobile application with backend"
-        ODOO = "odoo", "Odoo system"
+        INTERNAL_TOOL = "internal_tool", "Internal tool"
+        ODOO_SYSTEM = "odoo_system", "Odoo system"
         AUTOMATION = "automation", "Automation workflow"
         API_INTEGRATION = "api_integration", "API integration"
+        MOBILE_APPLICATION = "mobile_application", "Mobile application"
         PROJECT_RESCUE = "project_rescue", "Project rescue"
         OTHER = "other", "Other"
 
