@@ -1,5 +1,6 @@
 from unittest.mock import patch
 
+from django.core.cache import cache
 from django.test import TestCase, override_settings
 from django.urls import reverse
 
@@ -18,6 +19,9 @@ VALID_CONTACT = {
 
 
 class ContactFormTests(TestCase):
+    def setUp(self):
+        cache.clear()
+
     @override_settings(TELEGRAM_NOTIFICATIONS_ENABLED=False)
     def test_contact_form_accepts_valid_inquiry(self):
         response = self.client.post(reverse("website:contact"), VALID_CONTACT)

@@ -10,6 +10,7 @@
     <p class="lead">Published Odoo modules show MB Litom’s ability to build business software extensions, package them cleanly, publish through the Odoo Apps Store, and maintain focused ERP workflow improvements.</p>
     <div class="hero-actions">
         <a class="button primary" href="https://apps.odoo.com/apps/browse?repo_maintainer_id=1191406" target="_blank" rel="noopener noreferrer">View all Odoo apps</a>
+        <a class="button secondary" href="{% url 'website:contact' %}">Send inquiry</a>
     </div>
 </section>
 
@@ -37,6 +38,16 @@
             <h2>Odoo Apps Store presence</h2>
             <p>The public portfolio link shows MB Litom’s maintainer presence and selected published Odoo module work without making claims about sales or adoption.</p>
         </article>
+    </div>
+</section>
+
+<section class="section cta premium-cta">
+    <p class="eyebrow">Odoo work</p>
+    <h2>Need a module, integration or workflow review?</h2>
+    <p>Send a normal inquiry with your Odoo version, workflow, blockers and expected result. A paid review is optional for deeper scope and risk direction.</p>
+    <div class="hero-actions">
+        <a class="button primary" href="{% url 'website:contact' %}">Send inquiry</a>
+        <a class="button secondary" href="{% url 'payments:project_review_landing' %}">Start paid review</a>
     </div>
 </section>
 {% endblock %}

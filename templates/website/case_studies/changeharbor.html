@@ -11,6 +11,7 @@
     <p class="lead">ChangeHarbor is a live SaaS product built with user accounts, dashboards, background jobs, monitoring logic, change history, alerts, and deployment-ready infrastructure.</p>
     <div class="hero-actions">
         <a class="button primary" href="https://changeharbor.online/" target="_blank" rel="noopener noreferrer">View live product</a>
+        <a class="button secondary" href="{% url 'website:contact' %}">Send inquiry</a>
     </div>
 </section>
 
@@ -51,6 +52,16 @@
             <h2>Monitoring and recovery</h2>
             <p>Health checks, logs, worker visibility, screenshot monitoring, and practical debugging paths for delivery confidence.</p>
         </article>
+    </div>
+</section>
+
+<section class="section cta premium-cta">
+    <p class="eyebrow">Build similar capability</p>
+    <h2>Need a web application, internal tool or project rescue plan?</h2>
+    <p>Send a normal inquiry first, or choose a paid project review if you want scope, risks and milestone direction before a larger build.</p>
+    <div class="hero-actions">
+        <a class="button primary" href="{% url 'website:contact' %}">Send inquiry</a>
+        <a class="button secondary" href="{% url 'payments:project_review_landing' %}">Start paid review</a>
     </div>
 </section>
 {% endblock %}

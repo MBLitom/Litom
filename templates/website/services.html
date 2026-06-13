@@ -8,6 +8,10 @@
     <p class="eyebrow">Services</p>
     <h1>Focused software delivery for business-critical work.</h1>
     <p class="lead">MB Litom works on scoped software projects where the outcome needs to be usable, maintainable, and tied to a clear operational result.</p>
+    <div class="hero-actions">
+        <a class="button primary" href="{% url 'website:contact' %}">Send inquiry</a>
+        <a class="button secondary" href="{% url 'website:case_studies' %}">View work</a>
+    </div>
 </section>
 
 <section class="section">
@@ -36,6 +40,16 @@
             <h2>Project rescue</h2>
             <p>Codebase audits, stabilization plans, delivery recovery, maintainability improvements, and pragmatic next milestones for stalled software.</p>
         </article>
+    </div>
+</section>
+
+<section class="section cta premium-cta">
+    <p class="eyebrow">Next step</p>
+    <h2>Send the context. Get a practical path forward.</h2>
+    <p>Share the systems involved, the business outcome, current blockers and timeline. MB Litom can respond with the right next step: normal proposal discussion or optional paid review.</p>
+    <div class="hero-actions">
+        <a class="button primary" href="{% url 'website:contact' %}">Send inquiry</a>
+        <a class="button secondary" href="{% url 'payments:project_review_landing' %}">Start paid review</a>
     </div>
 </section>
 {% endblock %}

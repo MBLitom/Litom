@@ -32,8 +32,6 @@
             <a href="{% url 'payments:project_review_landing' %}">Project review</a>
             {% if request.user.is_authenticated %}
                 <a href="{% url 'accounts:dashboard' %}">Dashboard</a>
-            {% else %}
-                <a href="{% url 'accounts:login' %}">Login</a>
             {% endif %}
             <a class="nav-cta" href="{% url 'website:contact' %}">Send inquiry</a>
         </nav>

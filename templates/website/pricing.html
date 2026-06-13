@@ -8,6 +8,10 @@
     <p class="eyebrow">Pricing</p>
     <h1>Pricing starts with scope, risk, and delivery responsibility.</h1>
     <p class="lead">MB Litom does not sell generic packages or cart checkout services. Work is proposed around a concrete outcome, milestone structure, and decision points.</p>
+    <div class="hero-actions">
+        <a class="button primary" href="{% url 'website:contact' %}">Send inquiry</a>
+        <a class="button secondary" href="{% url 'payments:project_review_landing' %}">Start paid review</a>
+    </div>
 </section>
 
 <section class="section">
@@ -60,6 +64,6 @@
         <p class="eyebrow">Commercial model</p>
         <h2>Expect proposals, deposits, milestones, and delivery notes.</h2>
     </div>
-    <p>Each project starts with a written proposal that explains what will be built, what is excluded, what decisions are still open, and how payment requests align with delivery. Paysera Checkout is planned for later, but no payment integration is part of this public foundation.</p>
+    <p>Each larger project starts with a written proposal that explains what will be built, what is excluded, what decisions are still open, and how payment requests align with delivery. The optional paid project review is a separate €500 service checkout for clients who want reviewed scope and risks before committing to a larger build.</p>
 </section>
 {% endblock %}

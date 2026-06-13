@@ -38,11 +38,25 @@ a {
 }
 
 .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    padding: 18px 0;
+    padding: 14px 0;
+    backdrop-filter: blur(18px);
+}
+
+.site-header::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: -1;
+    height: 66px;
+    border-bottom: 1px solid rgba(217, 223, 220, 0.82);
+    background: rgba(246, 247, 244, 0.9);
 }
 
 .brand,
@@ -74,7 +88,12 @@ a {
 }
 
 .nav-cta {
+    min-height: 38px;
+    border: 1px solid rgba(14, 64, 57, 0.26);
+    border-radius: 6px;
+    padding: 7px 12px;
     color: var(--accent-dark) !important;
+    background: #fff;
     font-weight: 700;
 }
 
@@ -214,6 +233,17 @@ h3 {
     align-items: center;
 }
 
+.premium-hero .hero-copy {
+    padding-top: 20px;
+}
+
+.trust-line {
+    margin-top: 18px;
+    color: var(--accent-dark);
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
 .proof-stack {
     display: grid;
     gap: 14px;
@@ -239,6 +269,11 @@ h3 {
     background: var(--charcoal);
 }
 
+.setup-card {
+    min-height: auto;
+    padding: 16px 18px;
+}
+
 .live-card .panel-label,
 .live-card p {
     color: rgba(255, 255, 255, 0.78);
@@ -249,13 +284,15 @@ h3 {
     background: var(--soft-green);
 }
 
-.chip-row {
+.chip-row,
+.mini-chip-row {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
 
-.chip-row span {
+.chip-row span,
+.mini-chip-row span {
     display: inline-flex;
     min-height: 32px;
     align-items: center;
@@ -266,6 +303,22 @@ h3 {
     background: #fff;
     font-size: 0.86rem;
     font-weight: 750;
+}
+
+.mini-chip-row {
+    margin-top: 14px;
+}
+
+.mini-chip-row span {
+    min-height: 28px;
+    padding: 5px 9px;
+    font-size: 0.78rem;
+}
+
+.live-card .mini-chip-row span {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .hero-panel ul {
@@ -313,6 +366,25 @@ h3 {
 .cards article {
     min-height: 220px;
     padding: 24px;
+}
+
+.cards article,
+.work-card,
+.work-preview-card,
+.selected-work-card,
+.info-panel,
+.order-card,
+.project-request-form {
+    transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.cards article:hover,
+.work-card:hover,
+.work-preview-card:hover,
+.selected-work-card:hover {
+    border-color: rgba(23, 100, 90, 0.28);
+    transform: translateY(-2px);
+    box-shadow: 0 28px 82px rgba(23, 33, 30, 0.11);
 }
 
 .service-card-grid article {
@@ -507,7 +579,7 @@ h3 {
 }
 
 .selected-work-grid {
-    grid-template-columns: minmax(0, 1.18fr) repeat(2, minmax(240px, 0.91fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .work-card-grid {
