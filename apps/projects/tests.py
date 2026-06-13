@@ -1,4 +1,5 @@
 from unittest.mock import patch
+from html.parser import HTMLParser
 
 from django.core.cache import cache
 from django.test import TestCase, override_settings
@@ -16,6 +17,20 @@ VALID_CONTACT = {
     "timeline": ProjectRequest.Timeline.ONE_TO_TWO_MONTHS,
     "message": "We need a business web application that replaces manual spreadsheet work and integrates with our existing operations process.",
 }
+
+
+class FormFieldParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.honeypot_wrapper = None
+        self.honeypot_input = None
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag == "div" and attrs.get("class") == "honeypot":
+            self.honeypot_wrapper = attrs
+        if tag == "input" and attrs.get("name") == "website":
+            self.honeypot_input = attrs
 
 
 class ContactFormTests(TestCase):
@@ -69,3 +84,30 @@ class ContactFormTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Tell us what you want to build.")
+
+    def test_contact_page_renders_hidden_honeypot_field(self):
+        response = self.client.get(reverse("website:contact"))
+        parser = FormFieldParser()
+        parser.feed(response.content.decode())
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIsNotNone(parser.honeypot_wrapper)
+        self.assertIsNotNone(parser.honeypot_input)
+
+        wrapper_style = parser.honeypot_wrapper["style"]
+        for rule in (
+            "position:absolute",
+            "left:-10000px",
+            "top:auto",
+            "width:1px",
+            "height:1px",
+            "overflow:hidden",
+            "opacity:0",
+            "pointer-events:none",
+        ):
+            self.assertIn(rule, wrapper_style)
+
+        self.assertEqual(parser.honeypot_wrapper.get("aria-hidden"), "true")
+        self.assertEqual(parser.honeypot_input.get("autocomplete"), "off")
+        self.assertEqual(parser.honeypot_input.get("tabindex"), "-1")
+        self.assertEqual(parser.honeypot_input.get("aria-hidden"), "true")

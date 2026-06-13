@@ -5,7 +5,10 @@ from .spam import detect_project_request_spam
 
 
 class ProjectRequestForm(forms.ModelForm):
-    website = forms.CharField(required=False, widget=forms.TextInput(attrs={"autocomplete": "off", "tabindex": "-1"}))
+    website = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={"autocomplete": "off", "tabindex": "-1", "aria-hidden": "true"}),
+    )
 
     class Meta:
         model = ProjectRequest
