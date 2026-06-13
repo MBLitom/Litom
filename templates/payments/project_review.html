@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Project Review Deposit | MB Litom{% endblock %}
+{% block meta_description %}Start with a paid project review from MB Litom for Odoo, web applications, automation, integrations, or software project rescue.{% endblock %}
+
+{% block content %}
+<section class="hero review-hero">
+    <div class="hero-copy">
+        <p class="eyebrow">Paid project review</p>
+        <h1>Start with a paid project review</h1>
+        <p class="lead">Before building the full project, MB Litom reviews your situation, risks and scope, then proposes the next practical step.</p>
+        <div class="hero-actions">
+            <a class="button primary" href="{% url 'payments:project_review_checkout' %}">Start paid review</a>
+            <a class="button secondary" href="{% url 'website:contact' %}">Send normal inquiry instead</a>
+        </div>
+    </div>
+    <aside class="hero-panel price-panel">
+        <p class="panel-label">Project Review Deposit</p>
+        <h2>€500 deposit / project review</h2>
+        <p>Paid project review for Odoo, web application, automation, integration or software project rescue. Includes initial review, risks, recommended scope and next-step proposal.</p>
+    </aside>
+</section>
+
+<section class="section">
+    <div class="section-heading">
+        <p class="eyebrow">Includes</p>
+        <h2>A practical review before a larger build.</h2>
+    </div>
+    <div class="grid cards cards-four">
+        <article><h3>Current situation review</h3><p>Review the system, business context, existing code or workflow constraints.</p></article>
+        <article><h3>Risk review</h3><p>Identify delivery, technical, integration and operational risks before scope is locked.</p></article>
+        <article><h3>Recommended scope</h3><p>Define a realistic first milestone and what should wait.</p></article>
+        <article><h3>Next-step proposal</h3><p>Receive practical direction for build, rescue, automation or Odoo delivery.</p></article>
+    </div>
+</section>
+{% endblock %}

@@ -45,6 +45,10 @@ class ProjectRequest(models.Model):
     message = models.TextField()
     status = models.CharField(max_length=32, choices=Status.choices, default=Status.NEW)
     source = models.CharField(max_length=80, default="website_contact")
+    is_spam = models.BooleanField(default=False)
+    spam_reason = models.CharField(max_length=255, blank=True)
+    ip_address = models.GenericIPAddressField(blank=True, null=True)
+    user_agent = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

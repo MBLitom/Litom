@@ -8,6 +8,9 @@
     --accent: #17645a;
     --accent-dark: #0e4039;
     --gold: #b9852e;
+    --charcoal: #202725;
+    --soft-green: #e9f1ed;
+    --warn: #8a1f11;
 }
 
 * {
@@ -73,6 +76,19 @@ a {
 .nav-cta {
     color: var(--accent-dark) !important;
     font-weight: 700;
+}
+
+.messages {
+    width: min(1120px, calc(100% - 40px));
+    margin: 18px auto 0;
+}
+
+.message {
+    margin: 0 0 10px;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--panel);
 }
 
 .hero {
@@ -178,7 +194,10 @@ h3 {
 }
 
 .hero-panel,
-.cards article {
+.cards article,
+.proof-card,
+.info-panel,
+.order-card {
     border: 1px solid var(--line);
     border-radius: 8px;
     background: var(--panel);
@@ -188,6 +207,65 @@ h3 {
 .hero-panel {
     align-self: center;
     padding: 24px;
+}
+
+.premium-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.92fr);
+    align-items: center;
+}
+
+.proof-stack {
+    display: grid;
+    gap: 14px;
+}
+
+.proof-card {
+    padding: 22px;
+}
+
+.proof-card h2 {
+    margin-bottom: 8px;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    line-height: 1.1;
+}
+
+.proof-card p {
+    color: var(--muted);
+}
+
+.live-card {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.08);
+    background: var(--charcoal);
+}
+
+.live-card .panel-label,
+.live-card p {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.accent-card {
+    border-color: rgba(23, 100, 90, 0.28);
+    background: var(--soft-green);
+}
+
+.chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip-row span {
+    display: inline-flex;
+    min-height: 32px;
+    align-items: center;
+    border: 1px solid rgba(14, 64, 57, 0.22);
+    border-radius: 999px;
+    padding: 6px 10px;
+    color: var(--accent-dark);
+    background: #fff;
+    font-size: 0.86rem;
+    font-weight: 750;
 }
 
 .hero-panel ul {
@@ -201,6 +279,14 @@ h3 {
 .section {
     padding: 72px 0;
     border-top: 1px solid var(--line);
+}
+
+.narrow-section {
+    max-width: 720px;
+}
+
+.compact-page-hero {
+    padding-bottom: 34px;
 }
 
 .section-heading {
@@ -227,6 +313,10 @@ h3 {
 .cards article {
     min-height: 220px;
     padding: 24px;
+}
+
+.service-card-grid article {
+    min-height: 250px;
 }
 
 .cards p,
@@ -416,6 +506,10 @@ h3 {
     grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
 }
 
+.selected-work-grid {
+    grid-template-columns: minmax(0, 1.18fr) repeat(2, minmax(240px, 0.91fr));
+}
+
 .work-card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -477,6 +571,30 @@ h3 {
     align-items: start;
 }
 
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.38fr) minmax(0, 0.62fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.info-panel,
+.order-card {
+    padding: 24px;
+}
+
+.info-panel h2,
+.order-card h2,
+.price-panel h2 {
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    line-height: 1.1;
+}
+
+.order-list {
+    display: grid;
+    gap: 16px;
+}
+
 .project-request-form {
     display: grid;
     gap: 18px;
@@ -507,6 +625,19 @@ h3 {
     font: inherit;
 }
 
+.project-request-form input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+.project-request-form select,
+.project-request-form textarea {
+    width: 100%;
+    min-height: 46px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px 12px;
+    color: var(--ink);
+    background: #fff;
+    font: inherit;
+}
+
 textarea.form-control {
     resize: vertical;
 }
@@ -523,7 +654,7 @@ textarea.form-control {
 
 .field-errors,
 .form-errors {
-    color: #8a1f11;
+    color: var(--warn);
     font-size: 0.92rem;
 }
 
@@ -535,6 +666,19 @@ textarea.form-control {
 
 .contact-notes {
     grid-template-columns: 1fr;
+}
+
+.honeypot {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.hp-field {
+    position: absolute;
+    left: -10000px;
 }
 
 @media (max-width: 900px) {
@@ -550,9 +694,11 @@ textarea.form-control {
     .hero,
     .case-preview,
     .contact-layout,
+    .dashboard-layout,
     .odoo-work-grid,
     .proof,
-    .work-preview-grid {
+    .work-preview-grid,
+    .selected-work-grid {
         grid-template-columns: 1fr;
     }
 

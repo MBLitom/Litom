@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Confirm project review | MB Litom{% endblock %}
+
+{% block content %}
+<section class="page-hero compact-page-hero">
+    <p class="eyebrow">Checkout</p>
+    <h1>Confirm your project review order.</h1>
+    <p class="lead">Project Review Deposit: €500 EUR. Complete the payment through Paysera to confirm the review.</p>
+</section>
+
+<section class="section contact-layout">
+    <form class="project-request-form" method="post" novalidate>
+        {% csrf_token %}
+        {% if form.non_field_errors %}<div class="form-errors" role="alert">{{ form.non_field_errors }}</div>{% endif %}
+        {% for field in form %}
+            <div class="form-field">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}<p class="field-help">{{ field.help_text }}</p>{% endif %}
+                {% if field.errors %}<div class="field-errors" role="alert">{{ field.errors }}</div>{% endif %}
+            </div>
+        {% endfor %}
+        <button class="button primary" type="submit">Create order and continue to Paysera</button>
+    </form>
+    <aside class="info-panel">
+        <p class="panel-label">Normal inquiry</p>
+        <h2>Not ready for a paid review?</h2>
+        <p>Send a normal inquiry first. Registration and payment are not required for the public contact form.</p>
+        <a class="button secondary" href="{% url 'website:contact' %}">Send normal inquiry</a>
+    </aside>
+</section>
+{% endblock %}

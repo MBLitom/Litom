@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | MB Litom{% endblock %}
+
+{% block content %}
+<section class="page-hero compact-page-hero">
+    <p class="eyebrow">Dashboard</p>
+    <h1>Project review status.</h1>
+    <p class="lead">Track paid project review orders and the next step after Paysera confirmation.</p>
+</section>
+
+<section class="section dashboard-layout">
+    <aside class="info-panel">
+        <p class="panel-label">Profile</p>
+        <h2>{{ request.user.email|default:request.user.username }}</h2>
+        <p>{{ request.user.client_profile.full_name|default:"Client account" }}</p>
+        {% if request.user.client_profile.company_name %}<p>{{ request.user.client_profile.company_name }}</p>{% endif %}
+        <a class="button secondary" href="{% url 'payments:project_review_landing' %}">Start paid review</a>
+    </aside>
+
+    <div class="order-list">
+        {% for order in orders %}
+            <article class="order-card">
+                <p class="panel-label">{{ order.order_number }}</p>
+                <h2>Project Review Deposit</h2>
+                <p>Payment status: {{ order.get_status_display|lower }}</p>
+                <p>Amount: €{{ order.amount_eur|floatformat:2 }} {{ order.currency }}</p>
+                <p class="field-help">Next step after payment: MB Litom reviews the submitted context, risks, recommended scope and milestone direction.</p>
+            </article>
+        {% empty %}
+            <article class="order-card">
+                <p class="panel-label">No orders</p>
+                <h2>No paid project review orders yet.</h2>
+                <p>Start with a paid review if you want a reviewed scope, technical direction and next-step proposal.</p>
+                <a class="button primary" href="{% url 'payments:project_review_landing' %}">Start paid project review</a>
+            </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

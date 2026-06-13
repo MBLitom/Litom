@@ -5,72 +5,82 @@
 {% block meta_description %}MB Litom is a professional AI-accelerated software development studio for web applications, client portals, internal tools, Odoo systems, integrations, automation, and project rescue.{% endblock %}
 
 {% block content %}
-<section class="hero">
+<section class="hero premium-hero">
     <div class="hero-copy">
-        <p class="eyebrow">AI-accelerated software development studio</p>
-        <h1>Business software built with clean execution.</h1>
-        <p class="lead">MB Litom builds web applications, client portals, internal tools, Odoo systems, automations, integrations, and recovery plans for software projects that need to move forward.</p>
+        <p class="eyebrow">Business software development studio</p>
+        <h1>Business software, Odoo modules and internal tools built fast.</h1>
+        <p class="lead">MB Litom helps companies build web applications, Odoo workflows, automations and project rescue plans with clear scope, milestones and working delivery.</p>
         <div class="hero-actions">
-            <a class="button primary" href="{% url 'website:contact' %}">Start a project</a>
+            <a class="button primary" href="{% url 'payments:project_review_landing' %}">Request project review</a>
             <a class="button secondary" href="{% url 'website:case_studies' %}">View work</a>
         </div>
     </div>
-    <aside class="hero-panel" aria-label="Delivery focus">
-        <p class="panel-label">Current focus</p>
-        <ul>
-            <li>Clear scope before code</li>
-            <li>Lean Django monoliths first</li>
-            <li>AI where it improves speed and review, not where judgment is needed</li>
-            <li>Proposal, milestones, delivery, and maintenance</li>
-        </ul>
+    <aside class="proof-stack" aria-label="Proof and service signals">
+        <article class="proof-card live-card">
+            <p class="panel-label">Live SaaS</p>
+            <h2>ChangeHarbor</h2>
+            <p>Competitor monitoring product with accounts, dashboards, change tracking and alerts.</p>
+        </article>
+        <article class="proof-card">
+            <p class="panel-label">Published modules</p>
+            <h2>Odoo Apps</h2>
+            <p>KSeF and Lithuanian invoice tooling published for real ERP workflows.</p>
+        </article>
+        <article class="proof-card accent-card">
+            <p class="panel-label">Optional first step</p>
+            <h2>Project Review from €500</h2>
+            <p>Reviewed scope, technical direction, risks and milestone plan before a larger build.</p>
+        </article>
+        <div class="chip-row" aria-label="Production stack">
+            <span>Django</span><span>Docker</span><span>Cloudflare</span><span>Production</span>
+        </div>
     </aside>
+</section>
+
+<section id="proof" class="section proof-execution">
+    <div class="section-heading">
+        <p class="eyebrow">Proof of execution</p>
+        <h2>Real product, published modules and production delivery experience.</h2>
+    </div>
+    <div class="grid cards cards-four">
+        <article>
+            <h3>Live SaaS product built</h3>
+            <p>ChangeHarbor shows working software delivery across product, accounts, monitoring jobs, alerts and deployment.</p>
+        </article>
+        <article>
+            <h3>Published Odoo Apps modules</h3>
+            <p>Packaged Odoo extensions demonstrate practical ERP workflow delivery, not only custom one-off code.</p>
+        </article>
+        <article>
+            <h3>Odoo / Django / automation delivery</h3>
+            <p>Business systems, web applications, integrations and automations built with maintainable Django monolith patterns.</p>
+        </article>
+        <article>
+            <h3>Production deployment</h3>
+            <p>Deployment experience with Docker, Cloudflare and production-minded operations for small business software.</p>
+        </article>
+    </div>
 </section>
 
 <section id="services" class="section">
     <div class="section-heading">
         <p class="eyebrow">Services</p>
-        <h2>Software work for companies that need usable outcomes.</h2>
+        <h2>Focused software work for business operations.</h2>
     </div>
-    <div class="grid cards">
-        <article>
-            <h3>SaaS and web applications</h3>
-            <p>From first working software to a production-minded foundation, with clean architecture and practical delivery priorities.</p>
-        </article>
-        <article>
-            <h3>Internal tools and automations</h3>
-            <p>Dashboards, workflows, approvals, reporting, document handling, and integrations that reduce manual operations.</p>
-        </article>
-        <article>
-            <h3>Odoo systems and API integrations</h3>
-            <p>Custom Odoo work, business process fit, third-party APIs, data flows, and operational systems that have to keep working.</p>
-        </article>
-        <article>
-            <h3>Project rescue</h3>
-            <p>Technical audits, stabilization, refactoring plans, and delivery recovery for codebases that stalled or became risky to change.</p>
-        </article>
+    <div class="grid cards cards-four service-card-grid">
+        <article><h3>Web applications</h3><p>Django web applications, client workflows, dashboards and production-ready business tools.</p></article>
+        <article><h3>Odoo systems</h3><p>Odoo modules, workflow fit, business process support and ERP integrations.</p></article>
+        <article><h3>Internal tools &amp; automation</h3><p>Approvals, reporting, document handling, integrations and workflow automation.</p></article>
+        <article><h3>Project rescue</h3><p>Stabilization, risk review, refactoring plans and delivery recovery for stalled projects.</p></article>
     </div>
 </section>
 
-<section id="process" class="section process">
+<section id="work" class="section work-preview-section">
     <div class="section-heading">
-        <p class="eyebrow">Process</p>
-        <h2>A direct path from request to delivery.</h2>
-    </div>
-    <ol class="steps">
-        <li><strong>Request</strong><span>You describe the business problem, current constraints, and desired result.</span></li>
-        <li><strong>Proposal</strong><span>We define scope, assumptions, risks, timeline, and milestone structure before payment.</span></li>
-        <li><strong>Build</strong><span>Implementation proceeds in focused milestones with reviewable progress and clear decisions.</span></li>
-        <li><strong>Deliver</strong><span>You receive working software, documentation where needed, and a practical path for maintenance.</span></li>
-    </ol>
-</section>
-
-<section id="proof" class="section work-preview-section">
-    <div class="section-heading">
-        <p class="eyebrow">Proof of execution</p>
+        <p class="eyebrow">Selected work</p>
         <h2>Selected work that shows how MB Litom builds and ships.</h2>
-        <p>Proof is presented as concrete products and published modules: ChangeHarbor as a SaaS execution example, and Odoo Apps as evidence of packaged ERP extensions.</p>
     </div>
-    <div class="work-preview-grid">
+    <div class="work-preview-grid selected-work-grid">
         <article class="work-preview-card">
             <a class="product-preview compact-preview" href="https://changeharbor.online/" target="_blank" rel="noopener noreferrer" aria-label="Open ChangeHarbor live product">
                 <img src="{% static 'img/case-studies/changeharbor-preview-live.png' %}" alt="ChangeHarbor public website preview" onerror="this.closest('.product-preview').classList.add('is-missing'); this.remove();">
@@ -85,41 +95,41 @@
         </article>
         <article class="work-preview-card">
             <p class="panel-label">Odoo modules</p>
-            <h3>Odoo Apps by MB Litom</h3>
-            <p>Published Odoo modules showing MB Litom’s ability to build business software extensions, package modules, and work with real ERP workflows.</p>
+            <h3>KSeF Readiness Validator</h3>
+            <p>Published Odoo module for checking Polish invoice readiness against KSeF-related requirements.</p>
             <a class="text-link" href="{% url 'website:odoo_apps_case_study' %}">View Odoo work</a>
+        </article>
+        <article class="work-preview-card">
+            <p class="panel-label">Published app</p>
+            <h3>Lithuanian Invoice &amp; Vendor Bill Tools</h3>
+            <p>Odoo tooling for practical invoice and vendor bill workflows in a Lithuanian business context.</p>
+            <a class="text-link" href="https://apps.odoo.com/apps/modules/18.0/litom_lithuanian_invoice_tools" target="_blank" rel="noopener noreferrer">View Odoo app</a>
         </article>
     </div>
     <a class="button secondary" href="{% url 'website:case_studies' %}">View selected work</a>
 </section>
 
-<section class="section odoo-proof">
+<section id="process" class="section process">
     <div class="section-heading">
-        <p class="eyebrow">Odoo apps</p>
-        <h2>Published Odoo modules, packaged for real business workflows.</h2>
-        <p>Selected Odoo work shows that MB Litom can build, package, publish, and maintain focused modules for accounting and operational systems.</p>
+        <p class="eyebrow">Process</p>
+        <h2>A direct path from request to delivery.</h2>
     </div>
-    <div class="odoo-work-grid">
-        <article class="selected-work-card featured-work">
-            <p class="panel-label">Selected work</p>
-            <h3>KSeF Readiness Validator for Polish Invoices</h3>
-            <p>A focused Odoo module for checking Polish invoice readiness against KSeF-related requirements before teams move deeper into compliance and rollout planning.</p>
-            <a class="text-link" href="https://apps.odoo.com/apps/modules/18.0/account_ksef_preflight" target="_blank" rel="noopener noreferrer">View KSeF app</a>
-        </article>
-        <article class="selected-work-card compact-work">
-            <p class="panel-label">Additional published app</p>
-            <h3>Lithuanian Invoice &amp; Vendor Bill Tools</h3>
-            <p>Odoo tooling for practical invoice and vendor bill workflows in a Lithuanian business context.</p>
-            <a class="text-link" href="https://apps.odoo.com/apps/modules/18.0/litom_lithuanian_invoice_tools" target="_blank" rel="noopener noreferrer">View Lithuanian app</a>
-        </article>
-    </div>
-    <a class="text-link" href="{% url 'website:odoo_apps_case_study' %}">View Odoo work</a>
+    <ol class="steps">
+        <li><strong>Request</strong><span>You describe the business problem, current constraints, and desired result.</span></li>
+        <li><strong>Review</strong><span>MB Litom reviews context, risks, systems and the likely practical first milestone.</span></li>
+        <li><strong>Proposal</strong><span>Scope, assumptions, milestone structure, deposit expectations and delivery path are defined.</span></li>
+        <li><strong>Build / Deliver</strong><span>Implementation proceeds in focused milestones with reviewable progress and working delivery.</span></li>
+    </ol>
 </section>
 
-<section id="contact" class="section cta">
-    <p class="eyebrow">Start with scope</p>
-    <h2>Tell us what you want to build.</h2>
-    <p>Share the outcome you need, the systems involved, and what is blocking progress. The next step is a proposal, not a generic cart checkout.</p>
-    <a class="button primary" href="{% url 'website:contact' %}">Start a project request</a>
+<section id="contact" class="section cta premium-cta">
+    <p class="eyebrow">Project review</p>
+    <h2>Start with a paid project review from €500</h2>
+    <p>Get a clear review of your current situation, risks, recommended scope and next practical step before committing to a larger build.</p>
+    <div class="hero-actions">
+        <a class="button primary" href="{% url 'payments:project_review_landing' %}">Start paid project review</a>
+        <a class="button secondary" href="{% url 'website:contact' %}">Send normal inquiry</a>
+    </div>
+    <p class="field-help">Not ready for a paid review? Send a normal inquiry first.</p>
 </section>
 {% endblock %}

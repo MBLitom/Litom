@@ -1,9 +1,12 @@
 from django import forms
 
 from .models import ProjectRequest
+from .spam import detect_project_request_spam
 
 
 class ProjectRequestForm(forms.ModelForm):
+    website = forms.CharField(required=False, widget=forms.TextInput(attrs={"autocomplete": "off", "tabindex": "-1"}))
+
     class Meta:
         model = ProjectRequest
         fields = [
@@ -39,6 +42,8 @@ class ProjectRequestForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
             field.widget.attrs.setdefault("class", "form-control")
+        self.fields["website"].widget.attrs["class"] = "hp-field"
+        self.spam_reasons = []
 
     def clean_full_name(self):
         return self.cleaned_data["full_name"].strip()
@@ -53,3 +58,12 @@ class ProjectRequestForm(forms.ModelForm):
                 "Please include at least a few sentences about the business goal, systems involved, or current blocker."
             )
         return message
+
+    def clean(self):
+        cleaned_data = super().clean()
+        if self.errors:
+            return cleaned_data
+        self.spam_reasons = detect_project_request_spam(cleaned_data, cleaned_data.get("website", ""))
+        if self.spam_reasons:
+            raise forms.ValidationError("This request looks like an automated or test submission. Please review the fields and send a real project request.")
+        return cleaned_data
